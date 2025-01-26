@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Class 2</title>
+</head>
+
+<body>
+    <header>
+        <nav id="nav">
+            <ol id="classfellows">
+                <li><a href="#about">About</a></li>
+                <li><a href="#movie">Favorite movies</a></li>
+                <li><a href="#skills">My skills</a></li>
+                <li><a href="#location">My location</a></li>
+                <li><a href="#digital library">My digital library</a></li>
+                <li><a href="#contact">Contact us</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h1>
+                About me
+            </h1>
+            <p>
+                I am Muhammad Tallal Arif. <br>
+                I am currently a student of Software Engineering at FAST NUCES CFD. <br>
+                My roll number os 22F-3675. <br>
+                I am currently in 6th semester.<br>
+            </p>
+            <img src="profile-pic - 2025-01-24T144503.044.png" alt="My profile picture" height="150" width="150">
+        </section>
+        <section id="movie">
+            <h1>
+                My favorite movies
+            </h1>
+            <ul>
+                <li>Tenet</li>
+                <li>Harry Potter</li>
+                <li>Sandman</li>
+                <li>Dune</li>
+                <li>Intersteller</li>
+            </ul>
+            <!--Using iframe to embed youtube video link-->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/L3pk_TBkihU?si=ezngvwyKHVGLPWdJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <br>
+            <!--Using video tag t use local videos-->
+            <video width="640" height="360" controls>
+                <source src="TENET - Official Trailer.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+        <section id="skills">
+            <h1>
+                My Skills
+            </h1>
+            <ul>
+                <li>Programming</li>
+                <li>Problem Solving</li>
+            </ul>
+        </section>
+        <section id ="location">
+            <h1>
+                Current Location
+            </h1>
+            <p id="loc">
+                The browser is trying tp fetch your current location. Please wait....
+            </p>
+            <!--We have to use the script option because we cannot useonly HTML to get location-->
+            <script>
+                function showPosition(position) 
+                {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    document.getElementById('loc').innerText = `Latitude: ${latitude}, Longitude: ${longitude}`;
+                }
+                function getLocation() 
+                {
+                    if (navigator.geolocation)
+                    {
+                        navigator.geolocation.getCurrentPosition(showPosition);
+                    } 
+                    else 
+                    {
+                        document.getElementById('loc').innerText = "Geolocation is not supported by this browser.";
+                    }
+                }
+                getLocation();
+            </script>
+        </section>
+        <section id="digital library">
+            <h1>
+                My digital library
+            </h1>
+            <label>
+                Hai kahaan ka irada tumhara sanam
+            </label><br>
+            <audio id="Hai-kahaan-ka-irada-tumhara"controls loop preload="auto">
+                <source src="Hai-kahaan-ka-irada-tumhara-nusrat-fateh-ali-khan.mp3" type="audio/mpeg">
+            </audio><br>
+            <label>
+                Mast nazroon se allah bachhae
+            </label><br>
+            <audio id="mast-nazroon-se-allah-bachhae" controls loop preload="auto">
+                <source src="mast-nazroon-se-allah-bachhae.mp3" type="audio/mpeg">
+            </audio><br>
+            <label>
+                Sochta Hoon Ke Woh Kitne Masoom Thay
+            </label><br>
+            <audio id="Sochta-Hoon-Ke-Woh-Kitne-Masoom-Thay-Nusrat-Fateh-Ali-Khan" controls loop preload="auto">
+                <source src="Sochta-Hoon-Ke-Woh-Kitne-Masoom-Thay-Nusrat-Fateh-Ali-Khan.mp3" type="audio/mpeg">
+            </audio>
+        </section>
+        <section id="contact">
+            <h1>
+                Contact us
+            </h1>
+            <form id="personal-info"action="">
+                <label id = "nameLabel">Your name: </label>
+                <input id="firsName" type="text" placeholder="Name" required><br>
+                <label id = "emailLabel">Your email: </label>
+                <input id="email" type="email" placeholder="someone@emample.com" required><br>
+                <label id = "messageLabel">Message:  </label>
+                <input id="message" type="textfield" placeholder="Type your Message" required><br>
+                <button>Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy
+            2025 demo project.All rights reserved
+        </p>
+    </footer>
+    
+</body>
+
+</html>
